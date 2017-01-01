@@ -1,0 +1,29 @@
+{
+  "name": "three.ks.swaprenderer",
+  "main": "build/index.js",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Kenji Saito"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "compile": "gulp compile"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "budo": "^9.3.0",
+    "glslify": "^6.0.1",
+    "gsap": "^1.19.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "minimist": "^1.2.0",
+    "three": "mrdoob/three.js#dev",
+    "three.fbo-helper": "^1.1.0"
+  },
+  "dependencies": {
+    "three": "mrdoob/three.js#dev",
+    "three.ks.customutils": "github:kenjispecial/THREE.CustomUtils"
+  }
+}

@@ -16,9 +16,12 @@ var SwapRenderer = function () {
     function SwapRenderer(opts) {
         _classCallCheck(this, SwapRenderer);
 
+        opts = opts || {};
         this.renderer = opts.renderer;
-        this.wid = opts.wid;
-        this.hig = opts.hig;
+        if (!this.renderer) console.error('renderer is not set, set renderer {rendereer : renderer}');
+
+        this.wid = opts.wid || 1;
+        this.hig = opts.hig || 1;
 
         this.s2 = this.hig * this.wid;
 

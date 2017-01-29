@@ -29,7 +29,7 @@ export default class SwapRenderer {
         this.makeOrthCamera(cameraName);
     }
     makeOrthCamera(name = 'ortho'){
-        this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
+        this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0, 10);
         return this[name];
     }
     makeMesh( shader, uniforms ) {

@@ -50,7 +50,7 @@ var SwapRenderer = function () {
         value: function makeOrthCamera() {
             var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'ortho';
 
-            this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
+            this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0, 10);
             return this[name];
         }
     }, {

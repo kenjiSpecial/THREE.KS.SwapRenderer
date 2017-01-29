@@ -39,7 +39,7 @@ export default class SwapRenderer {
             vertexShader : orthoVertShader,
             fragmentShader : shader
         });
-        let mesh = new THREE.Mesh(plane, shader);
+        let mesh = new THREE.Mesh(plane, mat);
 
         return mesh;
     }

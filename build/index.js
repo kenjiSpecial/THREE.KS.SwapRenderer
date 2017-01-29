@@ -62,7 +62,7 @@ var SwapRenderer = function () {
                 vertexShader: _threeKs.orthoVertShader,
                 fragmentShader: shader
             });
-            var mesh = new THREE.Mesh(plane, shader);
+            var mesh = new THREE.Mesh(plane, mat);
 
             return mesh;
         }

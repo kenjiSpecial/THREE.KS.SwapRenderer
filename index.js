@@ -1,6 +1,6 @@
 // let THREE = require('three');
 
-import {WebGLRenderTarget} from 'three'
+const THREE = require('three');
 import {createRenderTarget} from 'three.ks.customutils';
 
 export default class SwapRenderer {
@@ -23,6 +23,10 @@ export default class SwapRenderer {
 
         this.setSize( this.wid, this.hig );
 
+    }
+    setDefaultEnvironemnet( sceneName = 'scene', cameraName = 'ortho'){
+        this[sceneName] = new THREE.Scene();
+        this[cameraName] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
     }
     swap(){
         if(this.readBuffer == this.front){

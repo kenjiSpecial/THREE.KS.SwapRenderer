@@ -37,8 +37,8 @@ var SwapRenderer = function () {
     }
 
     _createClass(SwapRenderer, [{
-        key: 'setDefaultEnvironemnet',
-        value: function setDefaultEnvironemnet() {
+        key: 'setDefaultEnvironment',
+        value: function setDefaultEnvironment() {
             var sceneName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'scene';
             var cameraName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ortho';
 

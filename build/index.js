@@ -51,6 +51,7 @@ var SwapRenderer = function () {
             var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'ortho';
 
             this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
+            return this[name];
         }
     }, {
         key: 'makeScene',
@@ -59,6 +60,7 @@ var SwapRenderer = function () {
                 console.error('You forget to pass sceneName. I cannot make your scene.');return;
             }
             this[sceneName] = new THREE.Scene();
+            return this[sceneName];
         }
     }, {
         key: 'swap',

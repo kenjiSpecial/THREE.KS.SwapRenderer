@@ -24,7 +24,7 @@ export default class SwapRenderer {
         this.setSize( this.wid, this.hig );
 
     }
-    setDefaultEnvironment( sceneName = 'scene', cameraName = 'ortho'){
+    makeDefaultEnvironment( sceneName = 'scene', cameraName = 'ortho'){
         this.makeScene(sceneName);
         this.makeOrthCamera(cameraName);
     }

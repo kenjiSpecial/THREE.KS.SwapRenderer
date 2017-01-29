@@ -24,7 +24,7 @@ export default class SwapRenderer {
         this.setSize( this.wid, this.hig );
 
     }
-    setDefaultEnvironemnet( sceneName = 'scene', cameraName = 'ortho'){
+    setDefaultEnvironment( sceneName = 'scene', cameraName = 'ortho'){
         this[sceneName] = new THREE.Scene();
         this[cameraName] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
     }

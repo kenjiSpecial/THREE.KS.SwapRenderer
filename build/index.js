@@ -42,8 +42,23 @@ var SwapRenderer = function () {
             var sceneName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'scene';
             var cameraName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ortho';
 
+            this.makeScene(sceneName);
+            this.makeOrthCamera(cameraName);
+        }
+    }, {
+        key: 'makeOrthCamera',
+        value: function makeOrthCamera() {
+            var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'ortho';
+
+            this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
+        }
+    }, {
+        key: 'makeScene',
+        value: function makeScene(sceneName) {
+            if (!sceneName) {
+                console.error('You forget to pass sceneName. I cannot make your scene.');return;
+            }
             this[sceneName] = new THREE.Scene();
-            this[cameraName] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
         }
     }, {
         key: 'swap',

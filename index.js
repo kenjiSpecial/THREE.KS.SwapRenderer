@@ -25,8 +25,17 @@ export default class SwapRenderer {
 
     }
     setDefaultEnvironment( sceneName = 'scene', cameraName = 'ortho'){
+        this.makeScene(sceneName);
+        this.makeOrthCamera(cameraName);
+    }
+    makeOrthCamera(name = 'ortho'){
+        this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
+    }
+    makeScene( sceneName ){
+        if(!sceneName) {
+            console.error('You forget to pass sceneName. I cannot make your scene.'); return;
+        }
         this[sceneName] = new THREE.Scene();
-        this[cameraName] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
     }
     swap(){
         if(this.readBuffer == this.front){

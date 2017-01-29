@@ -1,7 +1,7 @@
 // let THREE = require('three');
 
 const THREE = require('three');
-import {createRenderTarget} from 'three.ks.customutils';
+import {createRenderTarget, orthoVertShader} from 'three.ks.customutils';
 
 export default class SwapRenderer {
     constructor(opts) {
@@ -31,6 +31,17 @@ export default class SwapRenderer {
     makeOrthCamera(name = 'ortho'){
         this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, 0.5, 0, 10);
         return this[name];
+    }
+    makeMesh( shader, uniforms ) {
+        let plane = new THREE.PlaneGeometry(1, 1);
+        let mat   = new THREE.RawShaderMaterial({
+            uniforms : uniforms,
+            vertexShader : orthoVertShader,
+            fragmentShader : shader
+        });
+        let mesh = new THREE.Mesh(plane, shader);
+
+        return mesh;
     }
     makeScene( sceneName ){
         if(!sceneName) {

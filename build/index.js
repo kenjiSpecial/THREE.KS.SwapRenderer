@@ -54,6 +54,19 @@ var SwapRenderer = function () {
             return this[name];
         }
     }, {
+        key: 'makeMesh',
+        value: function makeMesh(shader, uniforms) {
+            var plane = new THREE.PlaneGeometry(1, 1);
+            var mat = new THREE.RawShaderMaterial({
+                uniforms: uniforms,
+                vertexShader: _threeKs.orthoVertShader,
+                fragmentShader: shader
+            });
+            var mesh = new THREE.Mesh(plane, shader);
+
+            return mesh;
+        }
+    }, {
         key: 'makeScene',
         value: function makeScene(sceneName) {
             if (!sceneName) {

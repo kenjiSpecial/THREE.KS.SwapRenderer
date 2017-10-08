@@ -50,13 +50,14 @@ var SwapRenderer = function () {
         value: function makeOrthCamera() {
             var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'ortho';
 
-            this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0, 10);
+            this[name] = new THREE.Camera();
+            this[name].position.z = 1;
             return this[name];
         }
     }, {
         key: 'makeMesh',
         value: function makeMesh(shader, uniforms) {
-            var plane = new THREE.PlaneGeometry(1, 1);
+            var plane = new THREE.PlaneGeometry(2, 1);
             var mat = new THREE.RawShaderMaterial({
                 uniforms: uniforms,
                 vertexShader: _threeKs.orthoVertShader,
@@ -78,7 +79,7 @@ var SwapRenderer = function () {
     }, {
         key: 'swap',
         value: function swap() {
-            if (this.readBuffer == this.front) {
+            if (this.readBuffer === this.front) {
                 this.readBuffer = this.back;
                 this.writeBuffer = this.front;
             } else {

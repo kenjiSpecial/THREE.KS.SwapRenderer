@@ -29,11 +29,12 @@ export default class SwapRenderer {
         this.makeOrthCamera(cameraName);
     }
     makeOrthCamera(name = 'ortho'){
-        this[name] = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0, 10);
+        this[name] = new THREE.Camera();
+        this[name].position.z = 1;
         return this[name];
     }
     makeMesh( shader, uniforms ) {
-        let plane = new THREE.PlaneGeometry(1, 1);
+        let plane = new THREE.PlaneGeometry(2, 1);
         let mat   = new THREE.RawShaderMaterial({
             uniforms : uniforms,
             vertexShader : orthoVertShader,
@@ -51,7 +52,7 @@ export default class SwapRenderer {
         return this[sceneName];
     }
     swap(){
-        if(this.readBuffer == this.front){
+        if(this.readBuffer === this.front){
             this.readBuffer = this.back;
             this.writeBuffer = this.front;
         }else{

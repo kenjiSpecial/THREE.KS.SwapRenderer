@@ -57,7 +57,7 @@ var SwapRenderer = function () {
     }, {
         key: 'makeMesh',
         value: function makeMesh(shader, uniforms) {
-            var plane = new THREE.PlaneGeometry(2, 1);
+            var plane = new THREE.PlaneGeometry(2, 2);
             var mat = new THREE.RawShaderMaterial({
                 uniforms: uniforms,
                 vertexShader: _threeKs.orthoVertShader,

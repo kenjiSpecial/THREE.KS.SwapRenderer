@@ -34,7 +34,7 @@ export default class SwapRenderer {
         return this[name];
     }
     makeMesh( shader, uniforms ) {
-        let plane = new THREE.PlaneGeometry(2, 1);
+        let plane = new THREE.PlaneGeometry(2, 2);
         let mat   = new THREE.RawShaderMaterial({
             uniforms : uniforms,
             vertexShader : orthoVertShader,
